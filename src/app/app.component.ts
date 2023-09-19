@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
-import {ElementComponent} from "./element/element.component";
+import {ElementComponent} from "./components/element/element.component";
+import {WelcomeComponent} from "./components/welcome/welcome.component";
+import {RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-root',
   standalone : true,
   template: `
-    <app-element/>
-    <p>test</p>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
   `,
   styles: [],
 
-  imports : [ElementComponent]
+  imports: [ElementComponent, RouterOutlet]
 })
 export class AppComponent {
   title = 'testAngular';
