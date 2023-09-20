@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterOutlet} from "@angular/router";
+import {Router, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-welcome',
@@ -9,6 +9,7 @@ import {RouterOutlet} from "@angular/router";
   template: `
     <div>
       <p>Welcome</p>
+      <button (click)="redirectToElement()">Rediriger vers Element</button>
       <router-outlet></router-outlet>
     </div>
 
@@ -17,4 +18,8 @@ import {RouterOutlet} from "@angular/router";
 })
 export class WelcomeComponent {
 
+  constructor(private router: Router) { }
+  redirectToElement() {
+  this.router.navigate(["/element"]);
+  }
 }
