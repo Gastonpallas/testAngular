@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterOutlet} from "@angular/router";
+import {API_ENDPOINTS} from "../../api.endpoints";
 
 @Component({
   selector: 'app-element',
@@ -25,7 +26,7 @@ import {RouterOutlet} from "@angular/router";
 
 export class ElementComponent implements OnInit{
 
-  private url: string = 'http://localhost:8080/api/v1/crud';
+  private url: string = API_ENDPOINTS.get;
   data: any
   ngOnInit(): void {
     fetch(this.url)
