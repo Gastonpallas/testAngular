@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterOutlet} from "@angular/router";
-import {API_ENDPOINTS} from "../../api.endpoints";
+import API_AUTH from "../../api.endpoints";
 
 @Component({
   selector: 'app-element',
@@ -26,7 +26,7 @@ import {API_ENDPOINTS} from "../../api.endpoints";
 
 export class ElementComponent implements OnInit{
 
-  private url: string = API_ENDPOINTS.get;
+  private url: string = API_AUTH.register;
   data: any
   ngOnInit(): void {
     fetch(this.url)
@@ -39,5 +39,4 @@ export class ElementComponent implements OnInit{
         console.error('Erreur lors de la récupération des données de l\'API :', error);
       });
   }
-
 }

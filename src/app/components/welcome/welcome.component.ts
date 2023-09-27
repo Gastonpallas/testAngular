@@ -9,17 +9,17 @@ import {Router, RouterOutlet} from "@angular/router";
   template: `
     <div>
       <p>Welcome</p>
-      <button (click)="redirectToElement()">Rediriger vers Element</button>
+      <button (click)="redirect('register/')">Register</button>
+      <button (click)="redirect('authenticate/')">Login</button>
       <router-outlet></router-outlet>
     </div>
-
   `,
   styles: []
 })
 export class WelcomeComponent {
 
   constructor(private router: Router) { }
-  redirectToElement() {
-  this.router.navigate(["/element"]);
+  redirect(path : String) {
+    this.router.navigate([path]);
   }
 }
